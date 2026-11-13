@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CaseClerk AI · Bệnh án Thần kinh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Noto+Serif:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">BA</span>
+      <div>
+        <div class="brand-title">CaseClerk AI · Bệnh án Thần kinh</div>
+        <div class="brand-sub">Ca mẫu: Đau đầu, yếu ½ người (T) · Nữ 52 tuổi</div>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <span class="proto-tag">Bản thử · AI chưa kết nối</span>
+      <div class="cost" title="Chi phí AI giả lập cho ca này">
+        <span class="cost-label">Chi phí ca này</span>
+        <span class="cost-value" id="cost">$0.000</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="steps" id="steps" aria-label="Các mục bệnh án"></nav>
+    <main class="work" id="work" aria-live="polite"></main>
+    <aside class="map" id="map" aria-label="Bản đồ lập luận"></aside>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="matrix.js"></script>
+  <script src="engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

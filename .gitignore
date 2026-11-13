@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Bí mật: không bao giờ đưa lên GitHub
+.env
+.env.*
+*.key
+
+# Hệ điều hành, trình soạn thảo
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Tài liệu gốc (slide, bệnh án mẫu) không đưa lên
+*.pdf
+bai-giang/
