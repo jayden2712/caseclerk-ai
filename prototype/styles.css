@@ -96,12 +96,21 @@ button, [data-go], [data-dx], [data-answer], [data-remove], label { cursor: poin
   position: sticky; top: 0; z-index: 10;
 }
 .brand { display: flex; gap: 12px; align-items: center; min-width: 0; }
-.brand-mark {
-  width: 38px; height: 38px; flex-shrink: 0; display: grid; place-items: center;
-  border-radius: var(--r); background: var(--primary); color: var(--on-primary);
-  font: 600 14px var(--display); letter-spacing: 0.5px;
+.brand-mark { width: 38px; height: 38px; flex-shrink: 0; object-fit: contain; }
+.brand-title { font: 700 17px/1.3 var(--display); letter-spacing: -0.01em; white-space: nowrap; }
+.brand-ai { color: var(--ai); }
+.specialty {
+  display: inline-flex; align-items: center; gap: 8px; margin-left: 8px; flex-shrink: 0;
+  padding: 5px 12px 5px 10px; border-radius: 999px;
+  background: var(--primary-soft); border: 1px solid color-mix(in srgb, var(--primary) 30%, transparent);
+  color: var(--primary); white-space: nowrap;
 }
-.brand-title { font: 600 16px/1.3 var(--display); letter-spacing: -0.01em; }
+.specialty::before {
+  content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 22%, transparent);
+}
+.specialty-label { font-size: 12px; color: var(--ink-2); }
+.specialty-name { font: 600 14px var(--display); }
 .brand-sub { font-size: 13px; color: var(--ink-2); }
 .topbar-right { display: flex; gap: 14px; align-items: center; }
 .proto-tag {
@@ -438,10 +447,17 @@ td.num { font-variant-numeric: tabular-nums; text-align: right; }
   .layout { grid-template-columns: 220px minmax(0, 1fr); }
   .map { display: none; }
 }
+@media (max-width: 960px) {
+  .brand-sub, .proto-tag { display: none; }
+}
 @media (max-width: 760px) {
   .topbar { padding: 8px 16px; height: 56px; }
-  .brand-sub, .brand-tail, .cost-label { display: none; }
-  .brand-mark { width: 34px; height: 34px; }
+  .brand-sub, .cost-label, .specialty-label { display: none; }
+  .brand { gap: 8px; }
+  .brand-mark { width: 32px; height: 32px; }
+  .brand-title { font-size: 16px; }
+  .specialty { margin-left: 2px; padding: 4px 10px 4px 8px; gap: 6px; }
+  .specialty-name { font-size: 13px; }
   .cost { padding: 4px 10px; }
   .layout { grid-template-columns: 1fr; gap: 12px; padding: 12px 16px; }
   .steps {
@@ -459,6 +475,10 @@ td.num { font-variant-numeric: tabular-nums; text-align: right; }
   .hit, .q-row { flex-wrap: wrap; }
   .btn.sm { min-height: 40px; }
   .proto-tag { display: none; }
+}
+@media (max-width: 440px) {
+  /* Ưu tiên nhãn chuyên khoa; chi phí giả lập ẩn trên màn hình rất hẹp */
+  .cost { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
