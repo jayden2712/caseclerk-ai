@@ -476,6 +476,15 @@
     document.getElementById("work").innerHTML = VIEWS[sec.id](sec) + nav;
     document.getElementById("map").innerHTML = renderMap();
     document.getElementById("cost").textContent = "$" + state.cost.toFixed(3);
+    keepActiveStepVisible();
+  }
+
+  // Trên điện thoại, thanh mục cuộn ngang: đưa mục đang mở vào giữa tầm nhìn.
+  function keepActiveStepVisible() {
+    const steps = document.getElementById("steps");
+    const active = steps.querySelector(".step.active");
+    if (!active || steps.scrollWidth <= steps.clientWidth) return;
+    steps.scrollLeft = active.offsetLeft - (steps.clientWidth - active.offsetWidth) / 2;
   }
 
   function go(id, extra = {}) {
